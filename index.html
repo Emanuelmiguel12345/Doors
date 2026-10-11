@@ -1,0 +1,638 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DOORS · Conquistas</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik:wght@300..900&display=swap">
+<style>
+@font-face{font-family:'doorsfont';src:url('https://static.wikitide.net/stackdwiki/c/ce/Doors-Regular.ttf') format('truetype');font-display:swap}
+:root{color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--font-family-base:"Rubik",system-ui,sans-serif;
+--doorswiki-surface-1:light-dark(rgb(231,219,200),rgb(47,27,21));--doorswiki-surface-2:light-dark(rgb(234,226,214),rgb(73,50,43));
+--doorswiki-surface-3:light-dark(rgba(255,255,255,.3),rgba(0,0,0,.7));--doorswiki-container-color:light-dark(rgba(246,238,225,.9),rgba(46,27,21,.8));
+--color-surface-1:var(--doorswiki-surface-1);--color-surface-2:var(--doorswiki-surface-2);--color-surface-3:var(--doorswiki-surface-3);
+--color-base:light-dark(#2b1d16,#f0e6d8);--color-link:light-dark(#623e31,#e8bb81);--accent-color-base:var(--color-link);
+--border-color-base:color-mix(in srgb,var(--color-base) 10%,transparent);--border-base:1px solid var(--border-color-base);
+--border-radius-medium:12px;--space-xs:8px;--space-md:16px;--space-lg:24px;
+--bg:light-dark(url("https://static.wikitide.net/doorswiki/b/be/Rooms_Hallway1.png"),url("https://static.wikitide.net/stackdwiki/5/5a/DOORS_Site-background-dark.webp"))}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--color-surface-1)}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 var(--font-family-base);color:var(--color-base);background:transparent}
+body::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;background:var(--bg);background-size:cover;background-position:center;opacity:.4;filter:blur(6px)}
+body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background-color:var(--doorswiki-container-color)}
+.doors-font{font-family:'doorsfont',var(--font-family-base);font-weight:normal!important}
+.background-clip-text {
+    background-image: var(--gradient);
+    background-clip: text;
+    color: var(--color, transparent);
+}
+/* General */
+.color-template_gold {
+	--gradient: linear-gradient(180deg, #f7e5b4, #e8da32);
+}
+.color-template_knob {
+	--gradient: linear-gradient(180deg, #fefcf2, #f1b99d, #ad6483);
+}
+.color-template_knobs-boost {
+	--gradient: linear-gradient(180deg, #f8f1c7, #f2e296, #e7b086);
+}
+.color-template_stardust {
+	--gradient: linear-gradient(180deg, #fdfce9, #f1e380, #e49b87, #cd7792);
+	--stroke: #72354b;
+}
+.color-template_revive {
+	--gradient: linear-gradient(180deg, #fef5ed, #d55161);
+}
+.color-template_robux {
+	color: #fff;
+}
+
+/* Badge Colors */
+.color-template_battle {
+    --gradient: linear-gradient(180deg, #dde6ff 0%, #cbf6ff 24.9%, #ffffff 52.8%, #e6beff 77%, #553cba 100%);
+}
+.color-template_battlecool {
+    --gradient: linear-gradient(180deg, #dde6ff 0%, #ffffff 16.1%, #70ffff 31.8%, #ffec58 46.9%, #ff93dd 68.3%, #553cba 100%);
+}
+.color-template_crucifix {
+    --gradient: linear-gradient(180deg, #ffd7b7 0%, #a6b9e3 20.2%, #b2eaff 60%, #c89b8d 87.7%, #ffd7b7 100%);
+}
+.color-template_crucifixrare {
+    --gradient: linear-gradient(180deg, #ffd7b7 0%, #a9f4ff 25.4%, #8eacff 61.4%, #f4b8ff 79.2%, #f4ca71 89.1%, #8d645a 100%);
+}
+.color-template_crucifixscary {
+    --gradient: linear-gradient(180deg, #ffd7b7 0%, #a6b9e3 24.6%, #b2eaff 46%, #fdcaff 63%, #e28a8a 82.7%, #ffd7b7 100%);
+}
+.color-template_default {
+    color: #b49a80;
+}
+.color-template_escape {
+    --gradient: linear-gradient(180deg, #e5ffff, #87cbff);
+}
+.color-template_escapeblue {
+    --gradient: linear-gradient(180deg, #b2c3ff 0%, #7494ff 60.9%, #5670e5 100%);
+}
+.color-template_escapeinsane {
+    --gradient: linear-gradient(180deg, #66e3ff 0%, #7b61ff 16.3%, #db6790 37.4%, #fbe572 56.9%, #42ffb7 81.3%, #81beff 100%);
+}
+.color-template_escapeunique {
+    --gradient: linear-gradient(180deg, #fff36f 0%, #dba3a6 58.8%, #b3a4ff 80.4%, #81beff 100%);
+}
+.color-template_glitch {
+    --gradient: linear-gradient(180deg, #ff00fb 0%, #ff00fb 58.8%, #fff700 59.3%, #ffe90e 72.7%, #00f2ff 73.4%, #1cd8ff 86.7%, #e21cfb 87.5%, #ff00fb 100%);
+}
+.color-template_glitchpurple {
+    --gradient: linear-gradient(180deg, #b264b9 0%, #ff8fff 27%, #943aa6 74.9%, #903f9e 100%);
+}
+.color-template_groupmember {
+    --gradient: linear-gradient(180deg, #f4ffa9 0%, #eec37e 44.1%, #7caeff 100%);
+}
+.color-template_holiday {
+    --gradient: linear-gradient(180deg, #ffa4a6 0%, #fffed3 38.8%, #b7eeff 68.5%, #b7eeff 87%, #b9ffa4 100%);
+}
+.color-template_holidaycool {
+    --gradient: linear-gradient(180deg, #ffc5c6 0%, #db6790 19.6%, #e9b8f3 40.8%, #b7eeff 55.5%, #42ffb7 71.6%, #b9ffa4 100%);
+}
+.color-template_ranked {
+    --gradient: linear-gradient(180deg, #dde6ff 0%, #a2c3ff 26.5%, #ffffff 52.8%, #ffd5f4 61.1%, #feffcd 75.8%, #ebccff 89.4%, #553cba 100%);
+}
+.color-template_rareencounter {
+    --gradient: linear-gradient(180deg, #ff989a, #bb6aec);
+}
+.color-template_redyellow {
+    --gradient: linear-gradient(180deg, #ffa2a2, #ffda85);
+}
+.color-template_rush {
+    --gradient: linear-gradient(180deg, #7d97c7, #836efe);
+}
+.color-template_scary {
+    --gradient: linear-gradient(180deg, #ffedab 0%, #ffb580 39.3%, #c46de1 85.3%, #9876ba 100%);
+}
+.color-template_scary2 {
+    --gradient: linear-gradient(180deg, #ffe761 0%, #ff7530 40.8%, #d149e1 83.4%, #553cba 100%);
+}
+.color-template_shinyred {
+    --gradient: linear-gradient(180deg, #ffffff 0%, #ffd6d6 42%, #ff6868 57.4%, #ff4141 100%);
+}
+.color-template_special {
+    --gradient: linear-gradient(180deg, #f4ffa9 0%, #f1c5ff 30.4%, #b6eaf5 60.9%, #ff4e9e 100%);
+}
+.color-template_survive {
+    --gradient: linear-gradient(180deg, #c7837a, #c76868);
+}
+.color-template_surviverare {
+    --gradient: linear-gradient(180deg, #be97c7, #fe5d5d);
+}
+.color-template_thadventure {
+    --gradient: linear-gradient(180deg, #fece92, #fe8c25);
+}
+.color-template_thhard {
+    --gradient: linear-gradient(180deg, #ef7d69, #ef735d);
+}
+.color-template_thquest {
+    --gradient: linear-gradient(180deg, #ffa6ea, #d0d3ff);
+}
+.color-template_thvoid {
+    --gradient: linear-gradient(180deg, #fefefe, #4b4b4b);
+}
+.color-template_utg {
+    --gradient: linear-gradient(180deg, #ffffff 0%, #f3feff 28.5%, #a5f6ff 49.1%, #8299ff 62.8%, #ed888e 81.3%, #ff6c6c 100%);
+}
+.color-template_unique {
+    --gradient: linear-gradient(180deg, #f4ffa9, #ff8f63);
+}
+.color-template_vision {
+    color: #32f84f;
+}
+.color-template_archives {
+    --gradient: linear-gradient(135deg, #99b1ff 0%, #98d5cc 16.9%, #96ff90 26.3%, #89c7e3 35.4%, #85b4ff 51.5%, #8adac2 68.4%, #8eff86 74.8%, #8eff86 87.7%, #8396ff 100%);
+}
+.color-template_stairwell {
+    --gradient: linear-gradient(135deg, #4b4b54 0%, #313136 4.15%, #545457 30.4%, #1d1d1d 69.1%, #afafaf 100%);
+}
+
+/* modifier colors */
+.color-template_defaultm { color: #ffdebd; }
+.color-template_player   { color: #ffdebd; }
+.color-template_helpful1 { color: #f9ffb8; }
+.color-template_helpful2 { color: #c0ffa9; }
+.color-template_helpful3 { color: #abffd5; }
+.color-template_helpful4 { color: #aae6ff; }
+.color-template_danger0  { color: #ffbb93; }
+.color-template_danger1  { color: #ffa093; }
+.color-template_danger2  { color: #ff9294; }
+.color-template_danger3  { color: #ff7386; }
+.color-template_danger4  { color: #ff566f; }
+.color-template_danger5  { color: #ff4b4e; }
+.color-template_danger6  { color: #ff272b; }
+.color-template_hide     { color: #ffa08f; }
+.color-template_seek     { color: #ff6c6c; }
+.color-template_figure   { color: #eb8472; }
+.color-template_dupe     { color: #ffa0b8; }
+.color-template_rushm    { color: #bfbbd4; }
+.color-template_ambush   { color: #abf1c2; }
+.color-template_eyes     { color: #c7bcff; }
+.color-template_screech  { color: #bdc4d3; }
+.color-template_timothy  { color: #9db394; }
+.color-template_snare    { color: #a5b371; }
+.color-template_halt     { color: #50ffd9; }
+.color-template_giggle   { color: #bcb0aa; }
+.color-template_curious  { color: #ffdc4f; }
+.color-template_white    { color: #ffffff; }
+.color-template_pink     { color: #ff86d9; }
+.color-template_cool     { color: #ffb9f8; }
+.color-template_purple   { color: #aa83ff; }
+
+/* Misc */
+.color-template_lua {
+	color: #00007d;
+	--stroke: #fff;
+}
+.color-template_css {
+	color: #398fc6;
+}
+
+
+.badge-list-totals {
+	display: flex;
+	gap: 10px;
+	font-size: 1.3em;
+	justify-content: center;
+}
+
+.badge-list-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+.badge-list-wrapper p {
+	margin: 0;
+}
+.badge-list-wrapper .tabber__tabs {
+	align-items: center;
+	justify-content: center;
+}
+
+.badge-auto-edit {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: 10px;
+	padding: 2px 5px;
+    background: oklch(from var(--color-surface-2) l c h / 50%);
+	border: var(--border-base);
+	border-bottom: 0;
+	border-radius: 5px 5px 0 0;
+	line-height: 1;
+}
+
+
+.badge-list {
+	position: relative;
+	width: 100%;
+	max-width: 1000px;
+    background: oklch(from var(--color-surface-2) l c h / 50%);
+    backdrop-filter: unset!important;
+    border-radius: var(--border-radius-medium)!important;
+    border: var(--border-base)!important;
+	overflow: hidden;
+}
+
+.badge-list-page-actions {
+	position: absolute;
+	right: 5px;
+	top: 0;
+	font-weight: 500;
+}
+
+.badge-list-header {
+	text-align: center;
+	padding-top: 0.6em;
+}
+
+.badge-list-header-title {
+	font-weight: bold;
+	font-size: 1.7em;
+}
+
+.badge-list-badges-title {
+	padding: 5px 10px;
+	line-height: 1;
+	font-size: 1.5em;
+	font-weight: 600;
+	font-family: Oswald;
+	color: var(--accent-color-base);
+	background: linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0));
+}
+
+.badge-list-badges-wrapper {
+	height: 700px;
+	overflow-y: auto;
+	resize: vertical;
+}
+.badge-list-badges-wrapper.badge-list-badges-wrapper-auto {
+	height: fit-content;
+	max-height: 475px;
+}
+
+.badge-list-badges-type {
+	display: flex;
+	flex-direction: column;
+}
+.badge {
+	display: flex;
+	flex-wrap: wrap;
+    padding: var(--space-lg);
+	position: relative;
+	min-width: 600px;
+	align-items: center;
+}
+.badge::before {
+	content: '';
+	background-image: linear-gradient(90deg, #0000, #0000, var(--color-surface-2));
+	position: absolute;
+	height: 2px;
+	inset: 0;
+}
+.badge:hover {
+	background: var(--color-surface-3);
+}
+
+.badge-image {
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+	position: relative;
+	margin: 0 10px 0 5px;
+	height: 100px;
+	width: 100px;
+}
+.badge-image img {
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.badge-border {
+	position: absolute;
+	inset: -8px;
+	background-color: currentColor;
+	background-image: var(--gradient);
+	mask: url("https://static.wikitide.net/doorswiki/8/81/BadgeBorder.svg") no-repeat center / contain;
+	pointer-events: none;
+}
+.badge-border-secret {
+	mask: url("https://static.wikitide.net/doorswiki/6/62/SecretBadgeBorder.svg") no-repeat center / contain;
+}
+
+.badge-content {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	font-family: "Oswald", sans-serif;
+}
+
+.badge-top-row {
+	display: flex;
+	align-items: flex-start;
+}
+.badge-bottom-row {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.badge-owners {
+    font-size: 1.2em;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+    padding: 0 10px;
+    border-radius: 8px;
+    line-height: 1.2;
+}
+
+.badge-title {
+	line-height: 1;
+	font-size: 2em;
+	font-weight: 500;
+	margin-right: 10px;
+	background-image: var(--gradient);
+	color: var(--color, transparent);
+}
+
+.badge-right {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+}
+
+.badge-rewards {
+    margin-left: auto;
+	margin-bottom: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+    flex-shrink: 0;
+	padding-bottom: 30px;
+	padding-right: 5px;
+}
+
+.badge-rewards-item {
+	height: fit-content;
+	font-weight: bold;
+	font-size: 1em;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.badge-rewards-item::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: var(--color-surface-3);
+	height: 70%;
+	transform: translate(20%, 20%);
+	width: 90%;
+	border-radius: 20px;
+	z-index: -1;
+}
+.badge-rewards img {
+	height: 40px;
+	width: 40px;
+}
+
+.badge-details {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5em;
+	line-height: 1;
+	width: fit-content;
+	font-weight: 400;
+	gap: 5px;
+}
+
+.badge-tags {
+	color: #8B6261;
+	line-height: 1;
+	font-size: 1em;
+}
+.badge-text {
+	color: #C19184;
+}
+.badge-directions {
+	color: light-dark(#756554, #FFDEBD);
+	margin-right: 80px;
+}
+
+.badge-buttons {
+	position: relative;
+	width: 100%;
+}
+
+.badge-button {
+	position: absolute;
+	bottom: 100%;
+	right: 0;
+	cursor: help;
+}
+
+.badge-button img {
+	width: 30px;
+	height: 30px;
+}
+
+html.skin-theme-clientpref-day .badge-button img {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.badge-tutorial-button ~ .badge-references-button,
+.badge-tutorial-button ~ .badge-oldversions-button,
+.badge-references-button ~ .badge-oldversions-button,
+.badge-oldversions-button ~ .badge-references-button {
+    right: 2em;
+}
+
+.badge-tutorial-button ~ .badge-references-button ~ .badge-oldversions-button {
+    right: 4em;
+}
+
+.badge-button-container {
+	height: 0;
+	overflow: hidden;
+}
+
+.badge-tutorial-button:hover + .badge-tutorial-container,
+.badge-tutorial-container:hover,
+.badge-oldversions-button:hover + .badge-oldversions-container,
+.badge-oldversions-container:hover,
+.badge-references-button:hover + .badge-references-container,
+.badge-references-container:hover {
+	height: auto;
+}
+
+.badge-info-box {
+	width: 100%;
+	border-radius: var(--border-radius-medium);
+    border: unset!important;
+    background: var(--color-surface-2);
+    padding: var(--space-md)!important;
+    margin: var(--space-lg) 0 0!important;
+}
+
+.badge-info-box .badge {
+	min-width: unset;
+}
+
+.badge-info-title {
+	font-family: Oswald, sans-serif;
+	color: #ffdebd;
+	font-size: 1.5em;
+	text-align: center;
+	line-height: 1;
+}
+
+@media (max-width: 800px) {
+	.badge-list-wrapper .tabber__tabs {
+		justify-content: unset;
+	}
+	.badge-list-badges-title {
+		font-size: 1em;
+	}
+	.badge-list-badges-wrapper {
+		height: 500px;
+	}
+	.badge {
+		min-width: 500px;
+    	padding: var(--space-xs);
+	}
+	.badge-image {
+		height: 80px;
+		width: 80px;
+	}
+	.badge-title {
+		font-size: 1.5em;
+		line-height: 1
+	}
+	.badge-details {
+		line-height: 1.2;
+		font-size: 1.2em;
+	}
+	.badge-owners {
+		font-size: 1em;
+	}
+	.badge-rewards {
+		font-size: 0.7em;
+	}
+	.badge-rewards img {
+		width: 30px;
+		height: 30px;
+	}
+}
+/* ajustes para celular / interação (não vêm da wiki) */
+main{max-width:1000px;margin:0 auto;padding:12px}
+.badge-border{border-radius:50%}
+.badge-list-badges-wrapper{height:auto;max-height:none;resize:none}
+.badge{cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}
+.badge:not(.got) .badge-image img{filter:grayscale(1);opacity:.7}
+.badge:not(.got) .badge-border{filter:grayscale(.8) opacity(.6)}
+.badge.got::after{content:"✓";position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;background:#2f8f4e;color:#fff;font:700 16px/28px Oswald,sans-serif;text-align:center}
+.badge-button-container.open{height:auto}
+.badge-button{z-index:2}.badge-button img{border-radius:6px}
+.badge-image .ph{width:100%;height:100%;border-radius:50%;background:var(--color-surface-3);display:grid;place-items:center;font:700 38px Oswald,sans-serif}
+.badge-title span{display:inline-block}
+.top{display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 12px 4px;flex-wrap:wrap}
+.ring{--p:0;flex:none;width:84px;height:84px;border-radius:50%;padding:7px;background:conic-gradient(var(--accent-color-base) calc(var(--p)*1%),var(--border-color-base) 0)}
+.rin{width:100%;height:100%;border-radius:50%;background:var(--color-surface-1);display:grid;place-items:center;font:600 28px/1 Oswald,sans-serif}
+.ctl{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;padding:6px 10px}
+.ctl button,.ctl input{font:inherit;font-size:14px;font-family:Oswald,sans-serif;color:var(--color-base);background:var(--color-surface-2);border:var(--border-base);border-radius:20px;padding:5px 14px}
+.ctl button.on{background:var(--accent-color-base);color:var(--color-surface-1);border-color:transparent}
+.ctl input{flex:1;min-width:120px;max-width:260px}
+.tabs{display:flex;gap:2px;overflow-x:auto;padding:4px 8px;justify-content:center;flex-wrap:wrap}
+.tabs button{font:500 15px Oswald,sans-serif;text-transform:uppercase;color:var(--color-base);background:none;border:0;border-bottom:2px solid transparent;padding:6px 10px;opacity:.7}
+.tabs button.on{border-color:var(--accent-color-base);color:var(--accent-color-base);opacity:1}
+.empty{padding:30px;text-align:center;opacity:.7}
+footer{text-align:center;padding:10px 0 30px}footer button{font:inherit;font-size:12px;background:none;border:0;color:var(--color-base);opacity:.6;text-decoration:underline}
+@media(max-width:800px){.badge{min-width:0;padding-right:2px}.badge-content{min-width:0}.badge-directions{margin-right:0}.badge-rewards{padding-bottom:0;margin-right:62px;gap:3px;flex-shrink:0}.badge-rewards img{width:26px!important;height:26px!important}.badge-rewards-item{font-size:.9em}.badge-button img{width:26px!important;height:26px!important}.badge-top-row{flex-wrap:wrap}.badge-title{word-break:break-word}}
+
+.ring.sm{width:56px;height:56px;padding:5px}
+.ring.sm .rin{font-size:16px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:50;padding:20px}
+.ov.hidden{display:none}
+.ov-box{background:var(--color-surface-2);border:var(--border-base);border-radius:12px;padding:16px;max-width:420px;width:100%}
+.ov-box p{margin:0 0 8px;font-family:Oswald,sans-serif}
+.ov-box textarea{width:100%;height:90px;font:12px monospace;box-sizing:border-box;background:var(--color-surface-1);color:var(--color-base);border:var(--border-base);border-radius:6px;padding:6px;word-break:break-all}
+.ov-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:10px;flex-wrap:wrap}
+.ov-btns button{font:500 14px Oswald,sans-serif;background:var(--accent-color-base);color:var(--color-surface-1);border:0;border-radius:20px;padding:6px 16px;cursor:pointer}
+.ov-btns button.sec{background:var(--color-surface-3);color:var(--color-base)}
+</style></head><body><main>
+<div class="badge-list-wrapper"><div class="badge-list">
+<div class="badge-list-header"><div class="badge-list-header-title doors-font">Conquistas</div>
+<div class="badge-list-header-subtitle">Toque numa conquista para marcar que você pegou</div></div>
+<div class="top"><div class="ring" id="rg"><div class="rin" id="n">0</div></div>
+<div><div class="badge-list-totals" style="justify-content:flex-start;flex-direction:column;gap:0;font-size:1.1em"><span id="tp"></span><span id="ts" style="opacity:.7;font-size:.8em"></span></div></div>
+<div class="ring sm" id="rgs"><div class="rin" id="ns">0</div></div>
+<div style="font-size:.9em;opacity:.85"><b>Secretas</b><br><span id="tss"></span></div></div>
+<div class="ctl"><button id="bp" class="on">Só progresso</button><button id="bf">Só as que faltam</button><button id="sort">Ordenar</button><button id="undo">Desfazer</button><button id="exp">Salvar</button><button id="imp">Carregar</button><input id="q" type="search" placeholder="Buscar…"></div>
+<div class="tabs" id="tabs"></div>
+<div class="badge-list-badges"><div class="badge-list-badges-wrapper"><div class="badge-list-badges-type" id="g"></div></div></div>
+</div></div>
+<footer><button id="rs">Zerar tudo</button><div style="font-size:12px;opacity:.6;margin-top:10px">Site de fã, sem ligação com a LSPLASH. Dados e estilo: <a href="https://doorsgame.wiki" style="color:inherit">Official DOORS Wiki</a> (CC BY-SA 4.0).</div></footer><div class="ov hidden" id="ov"><div class="ov-box"><p id="ovmsg"></p><textarea id="ovta" spellcheck="false" readonly></textarea><div class="ov-btns"><button class="sec" id="ovcancel">Fechar</button><button id="ovok">OK</button></div></div></div></main>
+<script>
+const B=[{"g":"General","t":"Welcome","a":"Enjoy your stay!","d":"Join for the first time.","u":"Join the game for the very first time on any account.","x":false,"h":false,"o":true,"i":"2127715318","m":"Welcome Badge.png","k":"Default"},{"g":"General","t":"Group Member","a":"You're one with the cool kids now!","d":"Join the LSPLASH group (and get a free revive)!","u":"Join the [LSPLASH|official LSPLASH group] on Roblox.","r":{"Revive":1},"x":false,"h":false,"o":true,"i":"2127965744","m":"Group Member Badge.png","k":"GroupMember"},{"g":"General","t":"Buddy System","a":"Everything's better with friends!","d":"Play a run with a friend.","u":"Die or win a run on any floor with somebody on your friends list.","x":false,"h":false,"o":true,"i":"2127964863","m":"Buddy System Badge.png","k":"Unique"},{"g":"General","t":"Back From The Dead","a":"I have unfinished business.","d":"Revive yourself.","u":"Use a revive or spend 40 Robux to revive.","x":false,"h":false,"o":true,"i":"2127965819","m":"Back From The Dead Badge.png","k":"Unique"},{"g":"General","t":"In Plain Sight","a":"Quick, behind that conveniently shaped lamp!","d":"Hide from an entity by staying out of sight.","u":"Hide from Rush or Ambush without being inside of a hiding spot.","f":"Achievement's description is a reference to one of Sans' lines from Undertale.","x":false,"h":true,"o":true,"i":"2133600691","m":"In Plain Sight Badge.png","k":"Unique"},{"g":"General","t":"One Of Many","a":"You're just getting started.","d":"Encounter your first death.","u":"Die to anything for the first time.","x":false,"h":false,"o":true,"i":"2127965852","m":"One Of Many Badge.png","k":"Default"},{"g":"General","t":"Picking Flowers","a":"Still got it!","d":"Have Grampy create a Lotus for you.","u":"Get 8 Lotus Petals found throughout The Outdoors and bring them to Grampy in The Mill.","r":{"Stardust":10},"x":false,"h":true,"o":true,"i":"2639935491453645","m":"Picking Flowers Badge.png","k":"Unique"},{"g":"General","t":"Rebirth","a":"Binded back together.","d":"Become reborn through a Lotus.","u":"Die and use any Lotus.","r":{"Stardust":20},"x":false,"h":true,"o":true,"i":"3037366308820165","m":"Rebirth Badge.png","k":"Unique"},{"g":"General","t":"Interconnected","a":"Enjoy, future me!","d":"Preserve an item in a Rift.","u":"Place a major item into any Rift.","x":false,"h":false,"o":true,"i":"2133601126","m":"Interconnected Badge.png","k":"RareEncounter"},{"g":"General","t":"Lost In Translation","a":"That is NOT what I put in there.","d":"Transform an item in a Rift.","u":"Put a Candle/Smoothie/Tip Jar in a Rift to transform it into a Moonlight Candle/Moonlight Float/Rift Jar.","x":false,"h":true,"o":true,"i":"2917258128600674","m":"Lost In Translation Badge.png","k":"RareEncounter"},{"g":"General","t":"Herb Of Viridis","a":"My heart is beating faster than before...","d":"Find and use a green herb.","u":"Find or buy a Skeleton Key, get to the Infirmary's subroom, find and unlock the skull-locked door, and use the Green Herb.","x":false,"h":false,"o":true,"i":"2133601772","m":"Herb Of Viridis Badge.png","k":"Unique"},{"g":"General","t":"Expert Technician","a":"I'm the one for the job.","d":"Complete the Hotel's breaker puzzle in under a minute.","u":"Complete the Hotel's circuit breaker puzzle in under 60 seconds.","x":false,"h":true,"o":true,"i":"2127966117","m":"Expert Technician Badge.png","k":"Unique"},{"g":"General","t":"Whoever Smelt It","a":"...Dealt it.","d":"Survive a Firedamp leak.","u":"Succesfully escape a Firedamp room.","x":false,"h":false,"o":true,"i":"2301707323598858","m":"Whoever Smelt It Badge.png","k":"Default"},{"g":"General","t":"Trespassing","a":"Sorry, sorry!","d":"Escape the Nest.","u":"Activate all the anchors in The Nest at Door 150 in The Mines and escape.","x":false,"h":true,"o":true,"i":"789272246312597","m":"Trespassing Badge.png","k":"Default"},{"g":"General","t":"Running Track","a":"Cart Ride From Seek (For Free Knobs)","d":"Escape Seek in the Mines.","u":"Reach door 149 of the Seek chase in The Mines.","f":"Achievement's description is a reference to old Roblox cart ride games, often named \"Cart Ride into _____\", and some other old Roblox games having \"for Free Robux\" near the end of the title.","x":false,"h":false,"o":true,"i":"2817127966247970","m":"Running Track Badge.png","k":"Default"},{"g":"General","t":"Down The Drain","a":"Down you go!","d":"Beat Seek in The Dam.","u":"Interact with all the Valves in The Dam at Door 200 in The Mines and escape to The Woods.","f":"Achievement's icon might be a reference to one of the scenes in Terminator where he shows a thumbs up while drowning in lava, or an elimination scene in the Polus map from Among Us (which seems to also reference the specific Terminator scene).","x":false,"h":false,"o":true,"i":"2791673925795977","m":"Down The Drain Badge.png","k":"Default"},{"g":"General","t":"Welcome Back","a":"Are you enjoying your stay?","d":"Join another day.","u":"Join the game atleast 24 hours after the first time you joined.","x":true,"h":false,"o":true,"i":"2127965664","m":"Welcome Back Badge.png","k":"Default"},{"g":"General","t":"Betrayal","a":"Dibs!","d":"Steal a hiding spot from someone right before they die.","u":"Another player must interact with your hiding spot while you are still in it and die to anything.","x":true,"h":false,"o":true,"i":"2127965803","m":"Betrayal Badge.png","k":"Unique"},{"g":"General","t":"Ten Of Many","a":"You'll get used to it.","d":"Encounter your tenth death.","u":"Die to anything for the 10th time.","x":true,"h":false,"o":true,"i":"2127965866","m":"Ten Of Many Badge.png","k":"Default"},{"g":"General","t":"Hundred Of Many","a":"That's more like it!","d":"Encounter your hundredth death.","u":"Die to anything for the 100th time.","x":true,"h":false,"o":true,"i":"2127965910","m":"Hundred Of Many Badge.png","k":"Default"},{"g":"General","t":"Feed the Birds","a":"They seem to have a liking on you now...","d":"Feed a Caw Bread!","u":"Bring a slice of Bread to The Outdoors, or get lucky and find it in The Outdoors, and drop it on the ground.","f":"Achievement's description is a reference to the video 'brother may I have some oats' where the second pig says: 'I believe they have taken a liking to me.'","x":true,"h":true,"o":true,"i":"136346866966212","m":"Feed the Birds Badge.png","k":"Unique"},{"g":"General","t":"Unpatched Dupe Glitch","a":"Quick! Before it's patched!","d":"Use a printer to scan and print an item.","u":"Use any non-essential items on a printer in The Archives.","x":false,"h":false,"o":true,"i":"3444580067085575","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"General","t":"Quick Purchase","a":"They're out of my favorite soda!","d":"Use some loose change to purchase a Shakelight.","u":"Use {{Gold|10}} on a Shakelight vending machine in The Archives.","x":false,"h":true,"o":true,"i":"736781288900578","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"General","t":"Paperclip Challenge","a":"Think I can buy a house with this?","d":"Trade with the hooded figure in The Stairwell.","u":"Reach Landing 99 in The Stairwell and exchange your scrap for gold.","x":false,"h":true,"o":true,"i":"1888162062641412","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"Rage Room","a":"That worked?","d":"Successfully disable Noise.","u":"Push Noise's TV down some stairs in The Stairwell.","x":false,"h":true,"o":true,"i":"1382129123162095","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"Fried Mushrooms","a":"Smells pretty good, actually.","d":"Use a Fire Alarm to incinerate Meld.","u":"Use and survive a Fire Alarm in The Stairwell.","x":false,"h":true,"o":true,"i":"1685221277396553","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"REDACTED","a":"REDACTED","d":"Watch, and create a new entity.","u":"Bring the Disc from S-50 all the way to The Stairwell, find Noise's TV, and insert it.","x":true,"h":true,"o":true,"i":"4026679950625439","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"Second Wind","a":"Down but not out.","d":"Survive damage that would normally be lethal to you.","u":"Use the overheal given by a Starlight Vial, Starlight Bottle, or Starlight Jug to survive lethal damage.","x":false,"h":false,"o":true,"i":"918145866740608","m":"Stairwell Placeholder Badge.png","k":"Unique"},{"g":"General","t":"Grindset","a":"So we're gonna go and do at least ten thousand.","d":"Grind Salvage into Scrap.","u":"Pick up a Depot Item and place it into a Depot.","x":false,"h":false,"o":true,"i":"3069200883215187","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"Patience","a":"It's a virtue.","d":"Walk through the entire queue line in the Archives.","u":"Find Teller and walk trough the entire queue line in The Archives.","x":true,"h":true,"o":true,"i":"3012969357151434","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"General","t":"Mission Successful","a":"These things have never dried my hands.","d":"Flush a Toilet, turn on a Sink, and use an Air Dryer in succession.","u":"Flush a Toilet, turn on a Sink and use and Air Dryer in that specific order in a restroom in The Archives.","x":true,"h":true,"o":true,"i":"2358674839516376","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"General","t":"Dust To Dust","a":"Straight from the source!","d":"Obtain Stardust from a Scrapper.","u":"Place a Starlight Vial, Starlight Bottle, or Starlight Jug into a Depot in The Stairwell.","x":true,"h":true,"o":true,"i":"2188278828471393","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"Garage Sale","a":"No refunds.","d":"Open a garage with a Garage Key.","u":"Purchase a Garage Key from The Stairwell's Pre-Run Shop or find one naturally. Find a garage door and unlock it with the garage key.","x":true,"h":false,"o":true,"i":"2639886537747907","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"Clay World","a":"It was a little overdone anyway.","d":"Scrap a Ceramic Stem.","u":"Cook a Stem via the Fire Sprinklers, and then place it into a Depot.","x":true,"h":false,"o":true,"i":"1563321829226488","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"General","t":"QA Tester","a":"Get back to work! I said get back to work!","d":"Test stuff.","u":"Become a tester or developer for the game.","f":"Achievement's description references this meme ('''!NOT THE ORIGINAL MEME!''').","x":true,"h":true,"o":true,"i":"","m":"QA Tester Badge.png","k":"Special"},{"g":"General","t":"Content Creator","a":"Hello once again, audience!","d":"Be part of the DOORS Content Creator program. <3","u":"Become a content creator for the game by uploading media of DOORS on a social media platform.","x":true,"h":true,"o":true,"i":"","m":"Content Creator Badge.png","k":"Special"},{"g":"Entities","t":"Out Of My Way","a":"I'm walkin' here!","d":"Successfully survive Rush.","u":"Survive Rush by hiding in a hiding spot or in a safe spot.","f":"Achievement's description references this moment from the Midnight Cowboy.","x":false,"h":false,"o":true,"i":"2127965932","m":"Out Of My Way Badge.png","k":"Survive"},{"g":"Entities","t":"You Can Run","a":"But you can't um... um... uhh...","d":"Successfully run from Seek.","u":"Go through the 5 rooms in the Seek chase and survive.","x":false,"h":false,"o":true,"i":"2127965951","m":"You Can Run Badge.png","k":"Survive"},{"g":"Entities","t":"I See You","a":"Peek-a-boo!","d":"Dodge Screech's attack.","u":"When you hear a \"psst\", look around you until you see Screech. You must look at it and wait until it fully dissapears.","x":false,"h":false,"o":true,"i":"2127966064","m":"I See You Badge.png","k":"Survive"},{"g":"Entities","t":"Wrong Room","a":"Well this is awkward...","d":"Get duped by Dupe.","u":"Open a fake door spawned by Dupe.","x":false,"h":false,"o":true,"i":"2133599061","m":"Wrong Room Badge.png","k":"Survive"},{"g":"Entities","t":"Look At Me","a":"Last chance to look at me.","d":"Survive the Eyes.","u":"Survive a room with Eyes in it.","f":"Achievement's description is a reference to a line spoken by Gustavo Fring in a scene between him and rival Hector Salamanca from a Breaking Bad episode titled \"Face Off\".","x":false,"h":false,"o":true,"i":"2127966055","m":"Look at Me Badge.png","k":"Survive"},{"g":"Entities","t":"Eviction Notice","a":"And stay out!","d":"Get pushed out of a hiding spot by Hide.","u":"Stay inside of a hiding spot (which isn't in a subfloor or at Door 100 or Door 200) until you get pushed out of it by Hide.","x":false,"h":false,"o":true,"i":"2127965976","m":"Eviction Notice Badge.png","k":"Survive"},{"g":"Entities","t":"Dead Of Night","a":"Tick tock goes the clock...","d":"Survive Dread.","u":"Wait 10 minutes (or 1 hour while AFK) for Dread to spawn, then open the next door.","x":false,"h":false,"o":true,"i":"1653840661375503","m":"Dead Of Night Badge.png","k":"SurviveRare"},{"g":"Entities","t":"Rebound","a":"Coming back for seconds!","d":"Survive Ambush.","u":"Survive Ambush by constantly getting in and out of a hiding spot in The Hotel (or just hiding in a closet at Door 100 if Ambush somehow appears), or by hiding in a safe spot.","f":"Achievement's description references the \"Coming back for seconds\" idiom that is used to describe returning for another serving of food, usually because the first was enjoyed.","x":false,"h":false,"o":true,"i":"2127966009","m":"Rebound Badge.png","k":"SurviveRare"},{"g":"Entities","t":"Two Steps Forward","a":"And one step back.","d":"Survive Halt.","u":"Survive a room with Halt in it.","x":false,"h":false,"o":true,"i":"2127966037","m":"Two Steps Forward Badge.png","k":"SurviveRare"},{"g":"Entities","t":"Playtime","a":"Let's play!","d":"Give Sally a new toy.","u":"Encounter Sally and give it any item which isn't a crucifix.","f":"Achievement's name and description '''probably''' reference Playtime's phrase from the Baldi’s Basics in Education and Learning videogame.","x":false,"h":false,"o":true,"i":"3997925777959907","m":"Playtime Badge.png","k":"RareEncounter"},{"g":"Entities","t":"I Don't Believe My Eyes","a":"Dude, I swear there were like... ten million of them!","d":"Survive a swarm of Gloombats.","u":"Survive a room infested with Gloombats.","f":"Achievement's description and name reference the song ''Fireflies'' by Owl City, referencing the lyrics \"You would not believe your eyes, if ten million fireflies\".","x":false,"h":false,"o":true,"i":"1233383417912691","m":"I Don't Believe My Eyes Badge.png","k":"Survive"},{"g":"Entities","t":"Just A Prank","a":"It was just a prank, bro!","d":"Survive Giggle.","u":"Survive an attack from Giggle.","x":false,"h":false,"o":true,"i":"70842463964644","m":"Just A Prank Badge.png","k":"Survive"},{"g":"Entities","t":"Helping Hand","a":"You got a little something right... there.","d":"Knock Giggle off of another player's face.","u":"Remove a Giggle off of someone else's face.","x":false,"h":true,"o":true,"i":"1296279037717778","m":"Helping Hand Badge.png","k":"SurviveRare"},{"g":"Entities","t":"Trickshot","a":"Hooplah!","d":"Whack a Giggle and stun it with a Glowstick.","u":"Throw a Glowstick at a Giggle.","f":"Achievement is a reference to the SpongeBob episode \"Krusty Krab Training Video\", in which a brick is thrown at a fish who repeatedly says \"Hooplah!\"","x":false,"h":true,"o":true,"i":"779526452946763","m":"Trickshot Badge.png","k":"SurviveRare"},{"g":"Entities","t":"Trade Offer","a":"Do you accept?","d":"Barter with Louie.","u":"Encounter Louie in The Mines and give it any item by dropping it near its rat hole.","x":false,"h":true,"o":true,"i":"504590930650992","m":"Trade Offer Badge.png","k":"SurviveRare"},{"g":"Entities","t":"Sshh!","a":"Careful not to make a sound!","d":"Escape from the Library in the Hotel.","u":"Reach The Library at Door 50 in The Hotel and unlock the padlock's code at the exit door.","f":"Achievement's description references this song from the LazyTown.","x":false,"h":false,"o":true,"i":"2127966083","m":"Sshh! Badge.png","k":"Default"},{"g":"Entities","t":"Supporting Small Businesses","a":"Thank you, come again!","d":"Purchase an item from Jeff.","u":"Bring some Gold to Jeff Shop and buy an item.","f":"Achievement's description may be a reference to Apu Nahasapeemapetilon's \"Thank, you come again.\" Catchphrase from The Simpsons.","x":false,"h":false,"o":true,"i":"2133601267","m":"Supporting Small Businesses Badge.png","k":"Default"},{"g":"Entities","t":"Pls Donate","a":"Now I can go to college!","d":"Fill Jeff's tip jar.","u":"Bring ({{Gold|100}}) to Jeff Shop and fill up the tip jar.","f":"Achievement is a reference to another Roblox game of the same name and its description is a reference to the game UNDERTALE, where the protagonist is able to pay to vendor Temmies college (referred to as \"cool leg\" or \"colleg\" by Temmie).","x":false,"h":true,"o":true,"i":"2133601671","m":"Pls Donate Badge.png","k":"Unique"},{"g":"Entities","t":"Meet Timothy","a":"Hello there little spider!","d":"Encounter Timothy while looting.","u":"Open any containers in any main floor and have a 1 in 200 chance of Timothy jumping out of it. You can increase your chances of meeting it with the ''Itchy'' modifier.","f":"Achievement's icon is a reference to a joke between the developers and pre-release testers, where it was commonly requested that any drawers containing Timothy would be covered with webs, although this request always was declined and its description is a potential reference to an action in The Henry Stickmin Collection's 4th 'episode', Infiltrating the Airship, where during the Government Supported Private Investigator route, Henry attempts to spook a clan member with a tiny spider on a stick, but instead to scream or being scared and running, the clan member greeting it warmly, saying \"Oh, hello Mr. Spider.\" before Henry hitting him in the head with the stick being the member dazed and knocked out..","x":true,"h":false,"o":true,"i":"2127966127","m":"Meet Timothy Badge.png","k":"RareEncounter"},{"g":"Entities","t":"It Stares Back","a":"Guys, wait up!!!","d":"Encounter the Void.","u":"On a main floor, get left behind in a multiplayer run far enough to encounter Void.","x":true,"h":false,"o":true,"i":"2133601025","m":"It Stares Back Badge.png","k":"RareEncounter"},{"g":"Entities","t":"Meet Jack","a":"Ooga booga!","d":"Encounter Jack.","u":"Encounter Jack by hiding in a hiding spot in any main floor, having a 1 in 200 (0.5%) chance of it spawning, or by opening an door on any main floor, having a 1 in 2000 (0.05%) chance of it spawning behind it.","x":true,"h":false,"o":true,"i":"2127966139","m":"Meet Jack Badge.png","k":"RareEncounter"},{"g":"Entities","t":"Error","a":"Well that just happened.","d":"Encounter the Glitch.","u":"Fall into the void, experience a room generation error, pick up a Glitch Fragment, or get left behind in a multiplayer run in any subfloor.","x":true,"h":true,"o":true,"i":"2127966150","m":"Error Badge.png","k":"RareEncounter"},{"g":"Entities","t":"TRIAL & ERROR","a":"I... I think I'm seeing things.","d":"Encounter and survive an activated Glitch Fragment.","u":"Find and use a Glitch Fragment, then survive the glitched entity that spawns. You can increase the chances of finding a Glitch Fragment by encountering Glitch.","x":true,"h":true,"o":true,"i":"3994503755162324","m":"TRIAL & ERROR Badge.png","k":"RareEncounter"},{"g":"Entities","t":"Most Valuable Employee","a":"I hope I get a promotion!","d":"Successfully organize the Mail Room.","u":"Find and survive the Honcho encounter in The Archives.","x":false,"h":true,"o":true,"i":"2497010549297194","m":"Archives Placeholder Badge.png","k":"EscapeBlue"},{"g":"Entities","t":"Limitless Paper","a":"The Paper People's Personal Purgatory.","d":"Successfully survive Scribbles.","u":"Survive Scribbles by hiding in a hiding spot, hiding in a safe spot or by having enough health to tank the damage Scribbles gives.","x":false,"h":true,"o":true,"i":"1825827269518621","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Hello Walker","a":"Oh. It's you.","d":"Meet the strange, hooded creature in The Stairwell.","u":"Reach the end of The Stairwell at Landing 99 and interact with Cobbler.","x":false,"h":true,"o":true,"i":"1183008252654332","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"Entities","t":"Firewall","a":"Don't try that with me.","d":"Successfully avoid or disable Ransom.","u":"Stop moving fast enough when Ransom appears or collect {{Gold|500}} fast enough if Ransom infected you.","x":false,"h":true,"o":true,"i":"2320470442709029","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Smashing Deal","a":"It's making something new...","d":"Bargain with Portrait.","u":"Use Portrait to duplicate any non-essential item which isn't a Crucifix or a Briefcase.","x":false,"h":false,"o":true,"i":"1578884729090131","m":"Archives Placeholder Badge.png","k":"Default"},{"g":"Entities","t":"Crowd Watching","a":"Good thing I wasn't standing over there.","d":"Successfully avoid a stampede of Drones.","u":"Witness and survive a stampede of Drones You can get hit by them so long as you don't die.","x":false,"h":true,"o":true,"i":"4303360565813809","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Perfect Memory","a":"I can remember plenty of things.","d":"Successfully outsmart the Forget-Me-Nots.","u":"Survive the Forget-Me-Nots. You can take damage.","x":false,"h":true,"o":true,"i":"424937220656075","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Carpet Burn","a":"Ouch! That's hot!","d":"Successfully survive Bash.","u":"Survive Bash by either hiding in a hiding spot, hiding in a safe spot, or by having enough health to tank the damage given by Bash.","x":false,"h":true,"o":true,"i":"2710257537947291","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"It's Still You","a":"Despite everything.","d":"Stare at your reflection for too long.","u":"Find a restroom with a mirror in The Archives and stare perfectly still at it until Portrait spawns.","f":"Achievement's name and description is a reference to the line from UNDERTALE \"Despite everything, it's still you.\" which is shown when interacting with a mirror near the end of the game.","x":false,"h":false,"o":true,"i":"1532549276977461","m":"Archives Placeholder Badge.png","k":"Default"},{"g":"Entities","t":"Fih Are Friends","a":"Women fear me.","d":"Fead the Fih.","u":"Use Fih Food on a Fih tank in The Archives.","f":"The title is likely a reference to the quote \"Fish are friends, not food,\" from the movie Finding Nemo. The description is also likely a reference to the meme \"Fish want me, Women fear me.\"","x":false,"h":true,"o":true,"i":"2234293480928638","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Witness Protection","a":"I swear I didn't see anything! I swear!","d":"Resist looking at Alma.","u":"Avoid looking at Alma when it spawns or by surviving its minigame by keeping the red eye symbol in a white outline with a similar shape of the eye symbol.","x":false,"h":true,"o":true,"i":"4257243908647728","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Bubble Popping","a":"Get away from me!","d":"Pop a Stem by throwing it.","u":"Throw a Stem enough times to pop it.","x":false,"h":true,"o":true,"i":"3631975811926772","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"Entities","t":"Paparazzi","a":"I didn't realize someone was watching me.","d":"Scare off a large spectator.","u":"Scare off Creak when it tries to sneak up on you. You'll know it is doing this when you see its hand creeping up your screen.","x":false,"h":true,"o":true,"i":"3810629024141890","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"Entities","t":"Now Served","a":"You're serving, queen!","d":"Successfully survive the Teller.","u":"Find Teller in The Archives. It will give you a number, and once the number on its screen matches your number, quickly give it to it, or by having enough health to tank the damage given by Teller. Alternatively, you can hide in a closet, and it will eventually die.","x":false,"h":true,"o":true,"i":"531943390393359","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Shock Hazard","a":"This place is a mess.","d":"Successfully survive a Currents hazard.","u":"Survive a room with an eletrical Current. You can take damage.","x":false,"h":true,"o":true,"i":"1788726061198232","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Entities","t":"Who Am I?","a":"Of course I remember my own name...","d":"Try to remember.","u":"Interact with the highlighted box at S-50, in the room to the right of the emergency exit.","x":true,"h":true,"o":true,"i":"1458783363273047","m":"Archives Placeholder Badge.png","k":"Default"},{"g":"Entities","t":"Conga Line","a":"Hey! Chachacha... Hey!","d":"Be followed by 3 instances of Noise at once.","u":"Get 3 instances of Noise to follow you. You can push Noise's TV into fire escapes to prevent it from burning.","x":true,"h":false,"o":true,"i":"657088209891725","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Entities","t":"Friend Ball","a":"I... I don't really want this.","d":"Give the hooded figure in The Stairwell a pet.","u":"Bring a Stem to the top of The Stairwell and give it to Cobbler.","x":true,"h":true,"o":true,"i":"2385498449030377","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Items","t":"A Bone To Pick","a":"I wonder what's behind here?","d":"Open a Skull Lock with a Skeleton Key.","u":"Use a Skeleton Key on a Skull Lock.","x":false,"h":false,"o":true,"i":"545021187316849","m":"A Bone To Pick Badge.png","k":"Unique"},{"g":"Items","t":"Improvise","a":"I... guess that works.","d":"Shove a Lockpick in a Generator and call it a day.","u":"Use a Lockpick or a Multitool on a Generator instead of a Fuse.","x":false,"h":true,"o":true,"i":"96598251144845","m":"Improvise Badge.png","k":"Unique"},{"g":"Items","t":"D'oh!","a":"Nut!","d":"Eat a Donut.","u":"Find a Skeleton Key and the Rift Cafe Subroom in The Hotel. In that room, you can find a Donut and eat it.","f":"The ''achievement'' is a reference to a catchphrase said by Homer Simpson, the protagonist of famous animated sitcom, The Simpsons.","x":true,"h":true,"o":true,"i":"4383194222748587","m":"D'oh! Badge.png","k":"Unique"},{"g":"Items","t":"You Finally Turn Green","a":"Yaayyy!!","d":"Drink a Gween Soda and finally turn green.","u":"Barter with Louie until it gives you a Gween Soda, and drink it.","f":"Achievement's name is a reference to the Smiling Friends episode named \"Pim Finally Turns Green\".","x":true,"h":true,"o":true,"i":"3898604792955769","m":"You Finally Turn Green Badge.png","k":"Unique"},{"g":"Items","t":"Enlightened","a":"I can see everything.","d":"Have a full hotbar of light sources.","u":"Have a full inventory of light sources like a Flashlight or Lighter.","x":false,"h":false,"o":true,"i":"1903857672180839","m":"Archives Placeholder Badge.png","k":"Default"},{"g":"Items","t":"Girl Dinner","a":"This and some Vitamins.","d":"Have a full hotbar of edibles items.","u":"Have a full inventory of food items like Bread or Cheese.","x":false,"h":false,"o":true,"i":"501147464076214","m":"Archives Placeholder Badge.png","k":"Default"},{"g":"Items","t":"Pizza Time","a":"I'm not paying for these.","d":"Have a full hotbar of Pizza.","u":"Have a full inventory of Pizza. Most easily obtainable in The Archives.","x":false,"h":false,"o":true,"i":"2781303681587901","m":"Archives Placeholder Badge.png","k":"Default"},{"g":"Items","t":"Gold Standard","a":"I'm rich!","d":"Find and use a Honey Pot.","u":"Get infected / have someone else be infected by Ransom then find and use the Honey Pot that spawns.","x":false,"h":true,"o":true,"i":"1068615445673226","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Items","t":"Bad Luck","a":"What's 7 more years?","d":"Beckon Portrait with a Pocket Mirror.","u":"Throw a Pocket Mirror, spawning Portrait.","f":"Achievement's subtitle is likely a reference to a line spoken by Omni-Man in the 'Invincible' animated series.","x":false,"h":false,"o":true,"i":"3628997062689887","m":"Archives Placeholder Badge.png","k":"Default"},{"g":"Items","t":"Super-Size Me","a":"Yeah, I'll take a large.","d":"Obtain a Jug of Starlight.","u":"Buy a Starlight Jug for ({{Gold|750}}) at the end of The Stairwell.","x":false,"h":false,"o":true,"i":"4415379316127710","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Items","t":"Plug & Play","a":"Have you tried turning it off and on again?","d":"Install any module into your Scanner.","u":"Find a Scanner Module in The Stairwell, or take one from Cobbler, and pick it up while holding a Scanner.","x":false,"h":false,"o":true,"i":"3474867782002614","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Items","t":"Pro Gamer","a":"Easy. Over easy.","d":"Beat Egg without dropping a single egg.","u":"Trade any Scanner Module with Louie to get the EGG Module and complete the first 3 levels without missing any regular eggs or collecting any cracked eggs.","x":false,"h":true,"o":true,"i":"2966650115814843","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Items","t":"Emancipation Customization","a":"Four doors and seven knobs ago...","d":"Place a peculiar hat on a distinguished individual.","u":"Find a Damaged Hat and place it on Creak while it is stunned from a Fire Alarm.","x":true,"h":true,"o":true,"i":"3542501851954318","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Items","t":"Cracked Gamer","a":"So Hard-boiled!","d":"Start and beat Egg during any chase sequence.","u":"Trade any Scanner Module with Louie to get the EGG Module, and complete it entirely within a chase sequence.","sk":["CrackedGamerBadgeAward.png"],"x":true,"h":true,"o":true,"i":"3706034782299809","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Items","t":"Flash Point","a":"That was fire.","d":"Successfully light a Flare in under a second.","u":"Complete the quick-time event needed to light a Flare in less than a second.","x":true,"h":true,"o":true,"i":"345152883716556","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Floors","t":"Rock Bottom","a":"This is just the beginning.","d":"Escape The Hotel.","u":"Enter the elevator at Door 100 after completing the circut breaker puzzle.","r":{"Knob":50,"Revive":1,"Stardust":15},"x":false,"h":false,"o":true,"i":"2133603375","m":"Rock Bottom Badge.png","k":"Escape"},{"g":"Floors","t":"Detour","a":"I think I'm lost.","d":"Enter a subfloor. Receive their acknowledgment.","u":"Enter any subfloor.","r":{"Stardust":20},"x":false,"h":false,"o":true,"i":"2542480544292225","m":"Detour Badge.png","k":"Unique"},{"g":"Floors","t":"Around Back","a":"Could you check the back?","d":"Enter The Backdoor.","u":"Enter The Backdoor from The Lobby.","x":false,"h":true,"o":true,"i":"4490354459349084","m":"Around Back Badge.png","k":"Unique"},{"g":"Floors","t":"Other Way Around","a":"Yeah, I've got time.","d":"Escape The Backdoor.","u":"Interact with Door 0 in The Backdoor.","f":"Achievement's description references a scene in The Incredibles where Mr. Incredible says \"Yeah, I've got time.\"","r":{"Knob":50,"Stardust":15},"x":false,"h":true,"o":true,"i":"1414411336451656","m":"Other Way Around Badge.png","k":"EscapeUnique"},{"g":"Floors","t":"See You Soon","a":"That sure was the beginning.","d":"Escape The Mines.","u":"Wait for the ending cutscene in The Mines to finish.","r":{"Knob":50,"Revive":1,"Stardust":15},"x":false,"h":false,"o":true,"i":"1901113756549798","m":"See You Soon Badge.png","k":"Escape"},{"g":"Floors","t":"Touched Grass","a":"Fresh air!","d":"Enter The Outdoors through The Hotel.","u":"Bring Shears and a Skeleton Key to either of the large vine-covered doors at Door 91 and 99.","x":false,"h":true,"o":true,"i":"1596799052460247","m":"Touched Grass Badge.png","k":"Unique"},{"g":"Floors","t":"Down The Water Spout","a":"I'm more of a indoors person.","d":"Escape The Outdoors.","u":"Wait for the ending cutscene in The Outdoors to finish.","r":{"Knob":50,"Stardust":15},"sk":["GrambleLanternBadgeAward.png"],"x":false,"h":true,"o":true,"i":"702005650312417","m":"Down The Water Spout Badge.png","k":"EscapeUnique"},{"g":"Floors","t":"Forgotten Memories","a":"Something about this place feels like it should mean something to me.","d":"Enter The Archives.","u":"Bring 2 Lockpicks and a Skeleton Key to the hidden enterance at Door 60.","x":false,"h":true,"o":true,"i":"1605225638107350","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Floors","t":"Emergency Exit","a":"I think I'll call it here.","d":"Escape The Archives using an Emergency Exit.","u":"From sector C-Y, use an Emergency Exit in The Archives.","x":false,"h":true,"o":true,"i":"4197825594002432","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Floors","t":"Z-50","a":"Better than using the treadmill.","d":"Escape The Archives at Z-50","u":"Reach Z-50 in The Archives and interact with the exit.","x":false,"h":true,"o":true,"i":"197352446440105","m":"Archives Placeholder Badge.png","k":"Archives"},{"g":"Floors","t":"Going Down","a":"I don't think I'm supposed to see this...","d":"Enter The Stairwell.","u":"Bring a Skeleton Key to either the hidden enterance at Door 152, or a sideroom containing the enterance past that point.","x":false,"h":true,"o":true,"i":"419100379409312","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"Floors","t":"Going Up","a":"Better than using the stepmill.","d":"Escape The Stairwell.","u":"Reach Landing 99 in The Stairwell and interact with the exit.","x":false,"h":true,"o":true,"i":"4422865120861029","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"Floors","t":"Stair Master","a":"Leg Day never ends...","d":"Loop The Stairwell.","u":"Crawl through the hidden vent at Landing 99 and take the ladder back down the the start of The Stairwell.","x":false,"h":true,"o":true,"i":"1688524157566786","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Crucifix","t":"Evil Be Gone","a":"I banish thee!","d":"Use a Crucifix successfully.","u":"Use a Crucifix on any entity.","x":false,"h":false,"o":true,"i":"2133599257","m":"Evil Be Gone Badge.png","k":"Unique"},{"g":"Crucifix","t":"Stay Out Of My Way","a":"You're not that guy, pal.","d":"Use a Crucifix against Rush.","u":"While holding a Crucifix, get attacked by Rush.","f":"Achievement's description references this meme ('''!! WARNING: PROFANITY/SWEAR WORDS !!''')","x":false,"h":true,"o":true,"i":"2133599454","m":"Stay Out Of My Way Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Unbound","a":"Shut up, thanks.","d":"Use a Crucifix against Ambush.","u":"While holding a Crucifix, get attacked by Ambush.","x":false,"h":true,"o":true,"i":"2133599605","m":"Unbound Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Take A Breather","a":"Sit down for a moment.","d":"Use a Crucifix against Seek.","u":"While holding a Crucifix, let Seek catch you.","f":"Achievement's icon references this meme of a guy sitting in a chair.","x":false,"h":true,"o":true,"i":"2133599708","m":"Take A Breather Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"All Figured Out","a":"I figured that wouldn't work for long...","d":"Use a Crucifix against Figure.","u":"While holding a Crucifix, let Figure catch you.","f":"Achievement's icon is a reference to this image.","x":false,"h":true,"o":true,"i":"2133599910","m":"All Figured Out Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"You Can't See Me","a":"Stop staring at me with them big ol' eyes!","d":"Use a Crucifix against the Eyes.","u":"While holding a Crucifix, look at Eyes.","x":true,"h":true,"o":true,"i":"2133600212","m":"You Can't See Me Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"I Hate You","a":"Could you not be yourself for five minutes?!","d":"Use a Crucifix against Screech.","u":"While holding a Crucifix, waiting for Screech to attack you.","f":"Achievement's description references this moment from the Shrek movie.","x":true,"h":true,"o":true,"i":"2133600344","m":"I Hate You Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Two Steps Ahead","a":"I don't feel like dealing with you.","d":"Use a Crucifix against Halt.","u":"While holding a Crucifix, let Halt catch you.","f":"Achievement's name '''probably''' references this memephrase said by Nikocado Avocado Mukbanger.","x":true,"h":true,"o":true,"i":"2133600441","m":"Two Steps Ahead Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Outwitted","a":"The duper becomes... the dupee.","d":"Use a Crucifix against Dupe.","u":"While holding a Crucifix, enter a Dupe door.","x":true,"h":true,"o":true,"i":"2133600538","m":"Outwitted Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"It's Not My Time","a":"I won't go down!","d":"Use a Crucifix against Dread.","u":"While holding a Crucifix, let Dread catch you.","x":true,"h":true,"o":true,"i":"2256123875769776","m":"It's Not My Time Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Bug Zapper","a":"Is it.. is it dead?","d":"...'Use' a Crucifix against Timothy.","u":"While holding a Crucifix, find Timothy.","x":true,"h":true,"o":true,"i":"970904917647070","m":"Bug Zapper Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Lost In The Dark","a":"W-where's my Crucifix at? HEY!!","d":"Use a Crucifix against Void.","u":"While holding a Crucifix, get left behind.","f":"Achievement's description references a vine made by CalebCity.","x":true,"h":true,"o":true,"i":"3046781795217624","m":"Lost In The Dark Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Under New Management","a":"I bought the place.","d":"Use a Crucifix against Hide.","u":"While holding a Crucifix in The Mines, enter a hiding spot occupied by Hide.","f":"Achievement's name may be a reference to the scene in Megamind where the character Titan says \"I wouldn't say freed, more like under new management.\" or to Jesse from Breaking Bad informing his parents that he just bought their house.","x":true,"h":true,"o":true,"i":"308664585505076","m":"Under New Management Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Red Mist","a":"DONT ASK WHO A-60 IS","d":"Use a Crucifix against A-60.","u":"While holding a Crucifix, let A-60 attack you.","x":true,"h":true,"o":true,"i":"2753079656503998","m":"Red Mist Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Stop Right There","a":"Imagine a blue stop sign instead. Simple, right?","d":"Use a Crucifix against A-90.","u":"While holding a Crucifix, let A-90 attack you.","f":"The description of this badge is a direct reference to one of the lines from UNDERTALE.","x":true,"h":true,"o":true,"i":"3564553785088385","m":"Stop Right There Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Grin Reaper","a":"Turn that frown upside down!","d":"Use a Crucifix against A-120.","u":"While holding a Crucifix, let A-120 attack you.","x":true,"h":true,"o":true,"i":"2810652516854730","m":"Grin Reaper Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Red Light","a":"Blue light!","d":"Use a Crucifix against Blitz.","u":"While holding a Crucifix with the ''Blitz, Oh'' modifier active, let Blitz attack you.","x":true,"h":true,"o":true,"i":"4169257199436991","m":"Red Light Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Lookman No Looking","a":"Oh man!","d":"Use a Crucifix against Lookman.","u":"While holding a Crucifix with the ''Look, Man'' modifier active, look at Lookman.","f":"Achievement is a reference to the phrase \"Swiper no swiping!\" from the TV show Dora the Explorer. This extends to its description.","x":true,"h":true,"o":true,"i":"2474397632616922","m":"Lookman No Looking Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Time Out","a":"Hold up... wait a minute!","d":"Use a Crucifix against Haste.","u":"While holding a Crucifix with the ''Make Haste'' modifier active, let Haste catch you.","f":"Description references this meme","x":true,"h":true,"o":true,"i":"1389171401301189","m":"Time Out Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Bug Bomb","a":"Splat goes the Gloombat!","d":"Use a Crucifix against a swarm of Gloombats.","u":"Aggrovate a swarm of Gloombats, then hold out a Crucifix right before taking damage.","f":"Achievement's description references a children's song, as the \"splat, goes the gloombat!\" Is a reference to the song \"Pop, goes the weasel\".","x":true,"h":true,"o":true,"i":"3613633701310583","m":"Bug Bomb Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Not Funny","a":"You see, that's not funny.","d":"Use a Crucifix against Giggle.","u":"While holding a Crucifix, let a Giggle attack you.","x":true,"h":true,"o":true,"i":"1316767412265996","m":"Not Funny Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"The Bigger They Are","a":"...the harder they fall.","d":"Use a Crucifix against Grumble.","u":"While holding a Crucifix, let a Grumble catch you.","f":"Both name and description references \"The bigger they are, the harder they fall\" idiom.","x":true,"h":true,"o":true,"i":"544848033735346","m":"The Bigger They Are Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Queen's Gambit","a":"You're just a pawn.","d":"Use a Crucifix against Queen Grumble.","u":"IWhile holding a Crucifix, let the Queen Grumble attack you.","f":"Achievement's description references the oldest most popular chess openings for white called the Queen's Gambit","x":true,"h":true,"o":true,"i":"2100206745698733","m":"Queen's Gambit Badge.png","k":"Crucifix"},{"g":"Crucifix","t":"Scammed","a":"Scammer get scammed!","d":"Use a Crucifix against Louie.","u":"Drop a Crucifix in front of Louie's hole.","f":"Achievement's description references a popular meme of an Indian Scammers getting Scammed.","x":true,"h":true,"o":true,"i":"2834228082428209","m":"Scammed Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Playtime's Over","a":"I don't want to play with you anymore.","d":"Use a Crucifix against Sally.","u":"While holding a Crucifix, let Sally attack you.","f":"Achievement's description references this meme from the Toy Story 2.","x":true,"h":true,"o":true,"i":"2785202765244841","m":"Playtime's Over Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Annihilation","a":"It reacted to me...","d":"Banish Portrait with a Crucifix","u":"Bring Portrait out of The Archives, then attempt to duplicate a Crucifix.","x":false,"h":true,"o":true,"i":"1244961294717639","m":"Archives Placeholder Badge.png","k":"CrucifixRare"},{"g":"Crucifix","t":"Charles Drowned","a":"Sunny side down.","d":"Use a Crucifix on Charles.","u":"Drop the Scanner with the EGG Scanner Module inserted (obtained by giving Louie any Scanner Module) and interact with it whilst holding a Crucifix.","x":true,"h":true,"o":true,"i":"4122436137612087","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Challenges","t":"Not Five Stars","a":"I'm leaving a bad review.","d":"Escape The Hotel with at least a 50% bonus using Modifiers.","u":"Wait for the ending cutscene to finish with atleast a 50% modifier bonus in The Hotel.","r":{"Knob":50,"Revive":1,"Stardust":20},"x":false,"h":true,"o":true,"i":"2151004633","m":"Not Five Stars Badge.png","k":"EscapeUnique"},{"g":"Challenges","t":"Hotel Hell","a":"This is the worst hotel I've ever stayed at.","d":"Escape The Hotel with at least a 150% bonus using Modifiers.","u":"Wait for the ending cutscene to finish with atleast a 150% modifier bonus in The Hotel.","r":{"Knob":100,"Revive":1,"Stardust":20},"x":false,"h":true,"o":true,"i":"2151004643","m":"Hotel Hell Badge.png","k":"EscapeInsane"},{"g":"Challenges","t":"Rocky Road","a":"I think I'm good with vanilla.","d":"Escape The Mines with at least a 50% bonus using Modifiers.","u":"Wait for the ending cutscene to finish with atleast a 50% modifier bonus in The Mines.","f":"Both the name and the description have 2 meanings, the first being \"Rocky Road\" - something being rocky implies the challenge was difficult, \"I think I'm good with vanilla\" - vanilla in this context means \"without modifiers\". The second meaning being \"Rocky Road\" - Rocky Road ice cream (chocolate), \"I think I'm good with vanilla\" - Vanilla ice cream.","r":{"Knob":50,"Revive":1,"Stardust":20},"x":false,"h":true,"o":true,"i":"1852452263373089","m":"Rocky Road Badge.png","k":"EscapeUnique"},{"g":"Challenges","t":"A Hard Place","a":"And a rock!","d":"Escape The Mines with at least a 150% bonus using Modifiers.","u":"Wait for the ending cutscene to finish with atleast a 150% modifier bonus in The Mines.","f":"Both the name and the description are most likely a reference to the phrase \"'''between a rock and a hard place'''\" which is an idiom that describes being in a difficult situation with no good options, forcing a choice between two equally unpleasant or undesirable alternatives.","r":{"Knob":100,"Revive":1,"Stardust":20},"x":false,"h":true,"o":true,"i":"820874253830339","m":"A Hard Place Badge.png","k":"EscapeInsane"},{"g":"Challenges","t":"Star Employee","a":"Do you know how long it took me to get that?","d":"Successfully organize the Mail Room, after giving Honcho something it shouldn't have.","u":"Bring a Starlight Bottle all the way to The Archives, find Honcho, then complete a buffed version of the encounter.","x":false,"h":true,"o":true,"i":"2112578033808227","m":"Archives Placeholder Badge.png","k":"EscapeUnique"},{"g":"Challenges","t":"Storage Wars","a":"Three thousand is the best I can do.","d":"Bargain 3000 Gold from the hooded figure in The Stairwell.","u":"Give Cobbler 300 Salvage Scrap.","f":"The name is a reference to a reality TV show of the same name.","x":true,"h":true,"o":true,"i":"1616003504792374","m":"Archives Placeholder Badge.png","k":"Stairwell"},{"g":"Battle","t":"Winner","a":"Congratulations! You win!","d":"Win a round of BATTLE Mode in 1st place.","u":"Win 1st place in Battle Mode with at least one other player.","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"1381568812418413","m":"Winner Badge.png","k":"Battle"},{"g":"Battle","t":"Winner Winner","a":"You're a loser who sits and cries!","d":"Win 10 rounds of BATTLE Mode.","u":"Win 10 rounds of Battle Mode in 1st place, each with at least one other player.","r":{"Knob":100},"x":true,"h":false,"o":true,"i":"","m":"Winner Winner Badge.png","k":"BattleCool"},{"g":"Battle","t":"In Plain Sight 2","a":"We didn't playtest this to make sure this was possible","d":"Win a round of BATTLE Mode while never hiding at all.","u":"Win 1st place in Battle Mode with at least one other player, using only safe spots to survive. (Hiding Boxes count as hiding).","f":"Old achievement's description was a reference to \"We Didn't Playtest To Make Sure This Was Possible\", a Pressure badge. Achievement's name might be a reference to In Plain Sight 2, due to sharing the names, and is a callback to \"In Plain Sight\" achievement.","r":{"Knob":100},"x":true,"h":false,"o":true,"i":"","m":"In Plain Sight 2 Badge.png","k":"BattleCool"},{"g":"Battle","t":"Pointers","a":"That's a good point!","d":"Gain 2500 points in one BATTLE Mode round.","u":"Accumulate 2500 points in a single Battle Mode round.","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"261059343299567","m":"Pointers Badge.png","k":"Battle"},{"g":"Battle","t":"High Roller","a":"Whelp. Point proven.","d":"Gain 5000 points in one BATTLE Mode round.","u":"Accumulate 5000 points in a single Battle Mode round.","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"","m":"High Roller Badge.png","k":"BattleCool"},{"g":"Battle","t":"A Triple","a":"Oh baby!","d":"Eliminate 3 other players in a BATTLE Mode. Assists count.","u":"Kill or assist in a kill against 3 other players in one Battle Mode round.","f":"Achievement's name and description are a reference to the 2010 meme \"Oh Baby, A Triple.\"","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"","m":"A Triple Badge.png","k":"Battle"},{"g":"Battle","t":"Party Wipe","a":"But when I... win a 7v1.","d":"Eliminate 7 players in a BATTLE Mode round. Assists count.","u":"Kill or assist in a kill against 7 other players in one Battle Mode round.","f":"Achievement's description references 20v1 meme.","r":{"Knob":200},"x":true,"h":true,"o":true,"i":"","m":"Party Wipe Badge.png","k":"BattleCool"},{"g":"Battle","t":"Finders Keepers","a":"Mine mine mine mine mine!","d":"Eliminate a player in one BATTLE Mode round by stealing a nearby hiding spot.","u":"In Battle Mode, have a player interact with the hiding spot you are in and then die.","f":"Achievement's description could be a reference to \"Mine Mine Mine\" meme from Finding Nemo.","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"","m":"Finders Keepers Badge.png","k":"Battle"},{"g":"Battle","t":"The One Who Dealt It","a":"I'VE GOT AN IDEA!","d":"Eliminate a player by triggering Firedamp in one BATTLE Mode round.","u":"Use a Lighter in a Firedamp Room with at least 1 other player inside in Battle Mode.","f":"Achievement's description is most likely a reference to the Overwatch cinematic \"Junkertown: The Plan\"","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"","m":"The One Who Dealt It Badge.png","k":"Battle"},{"g":"Battle","t":"Ring Out","a":"KO!","d":"Fling a player out of bounds with Boxing Gloves in one BATTLE Mode round.","u":"Use the Boxing Gloves to knock a player out of the map in Battle Mode.","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"","m":"Ring Out Badge.png","k":"Battle"},{"g":"Battle","t":"Potassium Power","a":"Stop Everything","d":"Have at least two players slip on your Nanner Peel in a BATTLE Mode round.","u":"Throw a Nanner Peel onto the floor and have 2 other players slip on it in Battle Mode.","f":"Both name and description reference lines of Queen from Deltarune.","r":{"Knob":50},"x":true,"h":false,"o":true,"i":"","m":"Potassium Power Badge.png","k":"Battle"},{"g":"Battle","t":"Battler","a":"The game board is yours.","d":"Eliminate 100 players in total in BATTLE Mode.","u":"Kill 100 total players in Battle Mode.","r":{"Knob":100},"x":true,"h":false,"o":true,"i":"","m":"Battler Badge.png","k":"BattleCool"},{"g":"Visions","t":"MACHINE LEARNING","a":"EXCELLENT.","d":"Win any Daily Run. Retries count.","u":"Interact with the exit of a Daily Run.","f":"Achievement's description references one of the Voice's lines from Deltarune.","r":{"Knob":50},"x":false,"h":false,"o":true,"i":"2636238145372790","m":"MACHINE LEARNING Badge.png","k":"Vision"},{"g":"Visions","t":"PARALLEL PROCESSING","a":"THREADS SYNCHRONIZED","d":"Win any Daily Run with other players. Retries count.","u":"Interact with the exit of a Daily Run with someone else.","r":{"Knob":50},"x":false,"h":false,"o":true,"i":"2770087226375143","m":"PARALLEL PROCESSING Badge.png","k":"Vision"},{"g":"Visions","t":"LOW LATENCY","a":"RESPONSE TIME: OPTIMAL","d":"Win any Daily Run in under 5 minutes. Retries count.","u":"Interact with the exit of a Daily Run in under 300 seconds.","r":{"Knob":50},"x":false,"h":false,"o":true,"i":"338904710825126","m":"LOW LATENCY Badge.png","k":"Vision"},{"g":"Visions","t":"CLEAN RUN","a":"TRULY EXCELLENT.","d":"Win any Daily Run on your first attempt.","u":"Interact with the exit of a Daily Run without dying.","f":"Achievement's description references one of the Voice's lines from Deltarune.","r":{"Knob":100},"x":false,"h":false,"o":true,"i":"1063845873279495","m":"CLEAN RUN Badge.png","k":"Vision"},{"g":"Visions","t":"UPTIME","a":"DO NOT DISCONNECT","d":"Keep up a Daily Streak for 7 days.","u":"Interact with the exit of 7 different Daily Runs. You can miss days, despite the achievement directions.","f":"Achievement's description might reference to this meme of indian scammer screaming \"DO NOT REDEEM\".","r":{"Knob":200},"x":false,"h":false,"o":true,"i":"2867925373582154","m":"UPTIME Badge.png","k":"Vision"},{"g":"Visions","t":"Everything Everywhere All At Once","a":"Random @#%!%*@# go!","d":"Successfully escape The Hotel in the CHAOS Vision. If using livestream integration, requires at least 3 voters each poll.","u":"Wait for the ending cutscene to finish with the CHAOS Vision. You can also use livestream integration, but it requires atleast 3 voters at each poll.","f":"Achievement's name is a direct reference to the movie with the same name.","r":{"Knob":250,"Stardust":10},"x":true,"h":false,"o":true,"i":"1226198493522527","m":"Everything Everywhere All At Once Badge.png","k":"GlitchPurple"},{"g":"Collab","t":"Truer Tower Hero","a":"Bramble.. more like.. Scramble!","d":"Defeat Bramble on Hard Mode in the Tower Heroes x DOORS event.","r":{"Knob":100},"sk":["TowerHeroesBadgeAward2.png"],"x":true,"h":false,"o":true,"i":"1812889797307008","m":"Truer Tower Hero Badge.png","k":"THQuest"},{"g":"Collab","t":"We Out Here","a":"The Outdoors got... out.. floored!","d":"Complete The Outdoors Story Quest in the Tower Heroes x DOORS event.","r":{"Knob":100},"sk":["TowerHeroesBadgeAward1.png"],"x":true,"h":false,"o":true,"i":"2346123842218276","m":"We Out Here Badge.png","k":"THQuest"},{"g":"Collab","t":"Tower Hero","a":"El Goblino meta.","d":"Play the Tower Heroes x DOORS event and complete El Goblino's Quest.","r":{"Knob":100},"sk":["TowerHeroesBadgeAward3.png"],"x":true,"h":false,"o":true,"i":"2148287434","m":"Tower Hero Badge.png","k":"THQuest"},{"g":"Collab","t":"True Tower Hero","a":"I need more mana!","d":"Play the Tower Heroes x DOORS event and complete The Library on Hard.","f":"Achievement's description references Tower Heroes currency \"mana.\"","r":{"Knob":150,"Revive":1},"x":true,"h":false,"o":true,"i":"2144511356","m":"True Tower Hero Badge.png","k":"THHard"},{"g":"Collab","t":"Hotel Adventurer","a":"Who needs a crucifix when you have towers!","d":"Play the Tower Heroes x DOORS event and complete The Hotel in Adventure Mode.","r":{"Knob":100,"Revive":1},"x":true,"h":false,"o":true,"i":"2148807102","m":"Hotel Adventurer Badge.png","k":"THAdventure"},{"g":"Collab","t":"Void Buster","a":"I ain't afraid of no Void!","d":"Play the Tower Heroes x DOORS event and defeat Void.","f":"Both achievement's name and description is a reference to the song \"Ghostbusters\" by Ray Parker Jr.","r":{"Knob":500,"Revive":1},"x":true,"h":true,"o":true,"i":"2148807104","m":"Void Buster Badge.png","k":"THVoid"},{"g":"Collab","t":"You're It","a":"TAG!!!","d":"Play one round in untitled tag game on the Courtyard map.","r":{"Knob":50,"Revive":1},"x":true,"h":true,"o":true,"i":"2539945838342832","m":"You're It Badge.png","k":"UTG"},{"g":"Events","t":"CERTIFIED RUSH FAN","a":"Okay you can leave now","d":"Beat RUSH MODE!! Made by me ItsThump!!","u":"Complete Rush Mode.","x":true,"h":false,"o":false,"i":"2004308386837501","m":"CERTIFIED RUSH FAN Badge.png","k":"Rush"},{"g":"Events","t":"Trick Or Treat!","a":"Give me something good to eat!","d":"Knock on 30 Treater doors in Trick or Treat 2025.","r":{"Knob":200,"Revive":1},"x":true,"h":true,"o":false,"i":"1561848305836932","m":"Trick Or Treat! Badge.png","k":"Scary"},{"g":"Events","t":"Far From Home","a":"I think we should head back now.","d":"Reach Room 50 in Trick Or Treat 2025.","r":{"Knob":300,"Revive":1},"x":true,"h":true,"o":false,"i":"2373489378718790","m":"Far From Home Badge.png","k":"Scary2"},{"g":"Events","t":"Good Haul","a":"Duuude... we're RICH!!!","d":"Purchase all Store items with Candy in Trick Or Treat 2025.","r":{"Knob":500,"Revive":1},"sk":["PupkinBadgeAward.png"],"x":true,"h":true,"o":false,"i":"1669355231823766","m":"Good Haul Badge.png","k":"Scary2"},{"g":"Events","t":"Sugar Rush","a":"WHOOO!!!","d":"Eat 100 Candy during the 2024 Trick Or Treat.","r":{"Knob":100,"Revive":1},"x":true,"h":true,"o":false,"i":"2167171038640571","m":"Sugar Rush Badge.png","k":"Scary"},{"g":"Events","t":"Sugar Crash","a":"Maybe I've had too much... What do you think?","d":"Eat 500 Candy during the 2024 Trick or Treat.","f":"Achievement's description could be a reference to the Gravity Falls episode, The Inconveniencing. Mabel Pines, after eating too much of the sugar from Smile Dip, starts hallucinating and says \"Maybe I've had too much. What do you think?\"","r":{"Knob":500,"Revive":2},"x":true,"h":true,"o":false,"i":"817945551063050","m":"Sugar Crash Badge.png","k":"Scary2"},{"g":"Events","t":"Silent Night","a":"What a fright!","d":"Complete the Vision of Cringle's Workshop during the 2025 holidays.","f":"Achievement's name might be a reference to the ''achievement'' of the same name from untitled tag game.","r":{"Knob":250,"Revive":1,"Stardust":10},"x":true,"h":true,"o":false,"i":"4188765071147357","m":"Silent Night Badge.png","k":"Holiday"},{"g":"Events","t":"Holiday Spirit","a":"The most wonderful time of the year!","d":"Gift anything from the Store with Robux during the 2025 holidays.","f":"Achievement's description references the \"It's The Most Wonderful Time Of The Year\" song by Andy Williams.","r":{"Knob":600,"Revive":1,"Stardust":10},"x":true,"h":true,"o":false,"i":"","m":"Holiday Spirit Badge.png","k":"HolidayCool"},{"g":"Events","t":"Hardstuck","a":"So... this is ELO hell.","d":"Reach STARTER Rank in RANKED! Displays your actual rank.","r":{"Knob":100,"Revive":1},"x":true,"h":true,"o":false,"i":"446899243741856","m":"Hardstuck Badge.png","k":"Ranked"},{"g":"Events","t":"THE HUNT: First Edition","a":"Obtained during Roblox's THE HUNT: First Edition!","d":"Escape The Backdoor during THE HUNT: First Edition.","x":true,"h":true,"o":false,"i":"2583617475301475","m":"THE HUNT First Edition Badge.png","k":"EscapeBlue"},{"g":"Events","t":"Survival The Jeff The Killer","a":"That was a weird dream.","d":"Beat SUPER HARD MODE!! (April Fools 2023)","f":"Badge is a reference to a popular Roblox game with the same name along with its description maybe being a reference to Jeff The Killer's catchphrase, \"GO TO SLEEP\", because people often have dreams in their sleep.","x":true,"h":true,"o":false,"i":"2143218889","m":"Survival The Jeff The Killer Badge.png","k":"ShinyRed"},{"g":"Events","t":"Survive The Drakobloxxers","a":"SO RETRO!","d":"Beat RETRO MODE [SURVIVE THE DRAKOBLOXXERS] (April Fools 2024)","x":true,"h":true,"o":false,"i":"1318507127292914","m":"Survive The Drakobloxxers Badge.png","k":"ShinyRed"},{"g":"Legacy","t":"Rock Bottom (Before HOTEL+)","a":"This was only obtainable before the HOTEL+ update!","d":"Escape The Hotel.","x":true,"h":true,"o":false,"i":"2127966163","m":"Rock Bottom Badge.png","k":"Escape"},{"g":"Legacy","t":"Detour (Before The Outdoors)","a":"This was only obtainable before The Great Outdoors update!","d":"Enter a subfloor. Receive their acknowledgement.","x":true,"h":true,"o":false,"i":"2133601870","m":"Detour Badge.png","k":"Unique"},{"g":"Legacy","t":"Roomy","a":"How gloomy!","d":"Enter The Rooms.","u":"Bring 2 Lockpicks and a Skeleton Key to the hidden enterance in Door 60.","x":true,"h":true,"o":false,"i":"2133601870","m":"Roomy Badge.png","k":"Unique"},{"g":"Legacy","t":"Back On Track","a":"That sucked... but hey, check out this cool flashlight!","d":"Escape The Rooms.","x":true,"h":true,"o":false,"i":"2133603021","m":"Back On Track Badge.png","k":"EscapeUnique"},{"g":"Legacy","t":"A-1000","a":"This was only obtainable before The Archives update!","d":"Reach the end of The Rooms.","x":true,"h":true,"o":false,"i":"2133603122","m":"A-1000 Badge.png","k":"EscapeInsane"},{"g":"Unlisted","t":"BLOXFEST: Double Feature","a":"TEMPORARY. WILL BE SHORTLY REMOVED!","d":"Escape Hotel & Mines with some restrictions.","u":"The easiest way to get this badge is to start with The Hotel. Loot until you have at least 300 gold. Get yourself to the Jeff Shop (around door 55) and buy the Skeleton Key. Then, continue to The Courtyard (door 89) and look around to find the Shears. In the next room, cut the vines on the door with the shears and unlock the door behind with the Skeleton Key. You'll get the first part of the badge here. (25 minutes)\\n\\nNow, you have two choices:\\n* Continue the run: Make your way through The Outdoors. Once you complete this subfloor, you'll get a shortcut to The Mines Jeff Shop (door 152). Note: In the Outdoors, only one player has to complete the floor. Everyone else will be revived in the Mines and can still earn the badge. (30-35 minutes)\\n* Return to the Lobby: Create an elevator for The Mines and survive the first 50–60 doors until you reach the Jeff Shop, including The Nest and the first Seek chase. (30-40 minutes)\\n\\nOnce you are at The Mines Jeff Shop (around door 155), continue until door 200, beat Seek in The Dam, and complete the floor. (20 minutes)\\n\\n=== Retries ===\\n* If you die in The Hotel, you can simply replay the floor.\\n* If you die in The Outdoors, return to the Lobby and create an elevator for either The Outdoors again or try beating The Mines from the beginning.\\n* If you die in The Mines, you can either retry the floor or return to the Lobby and try taking the shortcut to door 152 from The Outdoors.\\n\\n=== Recommendations ===\\n* Play with others! It is easier with a team.\\n* If you get stuck at any point, watching a walkthrough might be very helpful.\\n\\n=== Conditions ===\\n* Don't use any modifiers.\\n* Don't use revives.\\n* Don't use a lotus.\\n* Don't use any saves.\\n* Don't use any rifts.","f":"Achievement's name is most likely a reference to one of the Mr. \"Ant\" Tenna's lines in Deltarune.","x":true,"h":true,"o":false,"i":"1226198493522527","m":"BLOXFEST Double Feature Badge.png","k":"GlitchPurple"},{"g":"Unlisted","t":"Out Hot Eat The Food","a":"N/A","d":"N/A","u":"Unknown, likely not intended for the Access Granted update.","x":true,"h":true,"o":false,"i":"4137450828053422","m":"Stairwell Placeholder Badge.png","k":"Stairwell"},{"g":"Unlisted","t":"THE TAKEOVER: NOOB","a":"N/A","d":"Gain 500 points in a Battle Mode round.","x":true,"h":true,"o":false,"i":"1785779318159197","m":"THE TAKEOVER NOOB Badge.png","k":"Default"},{"g":"Unlisted","t":"THE TAKEOVER: PRO","a":"N/A","d":"Gain 1000 points in a Battle Mode round.","x":true,"h":true,"o":false,"i":"4311630881057246","m":"THE TAKEOVER PRO Badge.png","k":"Default"},{"g":"Unlisted","t":"THE TAKEOVER: MASTER","a":"N/A","d":"Eliminate 3 players in a Battle Mode round.","x":true,"h":true,"o":false,"i":"3167463644564167","m":"THE TAKEOVER MASTER Badge.png","k":"Default"},{"g":"Unlisted","t":"THE TAKEOVER: EXTREME","a":"N/A","d":"Win a Battle Mode round without hiding.","x":true,"h":true,"o":false,"i":"2043344896372907","m":"THE TAKEOVER EXTREME Badge.png","k":"Default"}],RI={"Knob": "Knob icon.png", "Stardust": "Stardust icon.png", "Revive": "Revive icon.png", "Trivia": "Bulb icon.png", "Hiding": "Hiding icon.png"},FP='https://doorsgame.wiki/Special:FilePath/';
+const IMGS={};
+const ORD=['General','Entities','Items','Floors','Crucifix','Challenges','Battle','Visions','Collab','Events','Legacy','Unlisted'];
+const TB={General:'Geral',Entities:'Entidades',Items:'Itens',Floors:'Andares',Crucifix:'Crucifixo',Challenges:'Desafios',Battle:'Batalha',Visions:'Visões',Collab:'Collab',Events:'Eventos',Legacy:'Legado',Unlisted:'Fora da lista'};
+let got={},tab='All',onlyP=true,onlyM=false,q='',sort='wiki',last=null,ovMode='';
+try{got=JSON.parse(localStorage.getItem('doors-got')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('doors-got',JSON.stringify(got))}catch(e){}};
+const $=i=>document.getElementById(i);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const cls=k=>'color-template_'+k.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-');
+const img=(f,l)=>`<img src="${IMGS[f]||FP+encodeURIComponent(f)}" loading="lazy" alt="" data-l="${esc(l)}" onerror="ph(this)">`;
+function ph(i){const s=document.createElement('span');s.className='ph';s.textContent=i.dataset.l;i.replaceWith(s)}
+const P=B.filter(b=>!b.x),S=B.filter(b=>b.x);
+function count(){const a=P.filter(b=>got[b.i]).length,s=S.filter(b=>got[b.i]).length;
+$('n').textContent=a;$('rg').style.setProperty('--p',a/P.length*100);
+$('ns').textContent=s;$('rgs').style.setProperty('--p',S.length?s/S.length*100:0);
+$('tp').innerHTML='Progresso: <b>'+a+' / '+P.length+'</b> ('+Math.round(a/P.length*100)+'%)';
+$('ts').textContent='Total: '+B.length+' conquistas';
+$('tss').textContent=s+' / '+S.length+' (não contam)'}
+function row(b){const g=b.k?cls(b.k):'';
+let tags=[];if(b.x)tags.push('SECRETA');if(b.h)tags.push('ESCONDIDA');if(!b.o)tags.push('INDISPONÍVEL');
+let rw='';const it=[];
+for(const k in (b.r||{}))it.push(`<span class="badge-rewards-item"><span>${RI[k]?img(RI[k],k[0]):k}</span><span class="${cls(k)} background-clip-text">${b.r[k]}</span></span>`);
+(b.sk||[]).forEach(f=>it.push(`<span class="badge-rewards-item">${img(f,'?')}</span>`));
+if(it.length)rw='<div class="badge-rewards">'+it.join('')+'</div>';
+let bt='';
+if(b.u)bt+=`<div class="badge-tutorial-button badge-button">${RI.Trivia?img(RI.Trivia,'?'):'?'}</div><div class="badge-tutorial-container badge-button-container"><div class="badge-info-box"><div class="badge-info-title">TUTORIAL</div>${esc(b.u)}</div></div>`;
+if(b.f)bt+=`<div class="badge-references-button badge-button">${RI.Hiding?img(RI.Hiding,'i'):'i'}</div><div class="badge-references-container badge-button-container"><div class="badge-info-box"><div class="badge-info-title">REFERÊNCIAS</div>${esc(b.f)}</div></div>`;
+return `<div class="badge${got[b.i]?' got':''}" data-i="${b.i}"><div class="badge-image"><div class="badge-border${b.x?' badge-border-secret':''} ${g}"></div>${img(b.m,b.t[0])}</div>
+<div class="badge-content"><div class="badge-top-row"><div class="badge-title"><span class="${g} background-clip-text">${esc(b.t)}</span></div></div>
+<div class="badge-bottom-row"><div class="badge-details">${tags.length?'<div class="badge-tags">'+tags.join(', ')+'</div>':''}<span class="badge-text">${esc(b.a)}</span><span class="badge-directions">${esc(b.d)}</span></div>${rw}</div></div>${bt?'<div class="badge-buttons">'+bt+'</div>':''}</div>`}
+function vis(b){return(!onlyP||!b.x)&&(!onlyM||!got[b.i])&&(tab=='All'||b.g==tab)&&(b.t+' '+b.d+' '+b.a).toLowerCase().includes(q)}
+function sorted(arr){if(sort=='az')return[...arr].sort((x,y)=>x.t.localeCompare(y.t,'pt'));if(sort=='miss')return[...arr].sort((x,y)=>(got[x.i]?1:0)-(got[y.i]?1:0)||x.t.localeCompare(y.t,'pt'));return arr}
+function tabs(){const base=B.filter(b=>(!onlyP||!b.x)&&(!onlyM||!got[b.i]));
+const gs=ORD.filter(g=>base.some(b=>b.g==g));if(tab!='All'&&!gs.includes(tab))tab='All';
+const cg=a=>a.filter(b=>got[b.i]).length;
+$('tabs').innerHTML=[['All','Todas',base.length,cg(base)],...gs.map(g=>{const f=base.filter(b=>b.g==g);return[g,TB[g]||g,f.length,cg(f)]})].map(([k,l,n,c])=>`<button data-t="${k}" class="${k==tab?'on':''}">${l} ${c}/${n}</button>`).join('')}
+function render(){tabs();const l=sorted(B.filter(vis));$('g').innerHTML=l.length?l.map(row).join(''):'<div class="empty">Nada por aqui.</div>';count()}
+$('g').onclick=e=>{const bt=e.target.closest('.badge-button');
+if(bt){const c=bt.nextElementSibling;if(c)c.classList.toggle('open');return}
+if(e.target.closest('.badge-button-container'))return;
+const r=e.target.closest('.badge');if(!r)return;const i=r.dataset.i;
+last={i:i,was:!!got[i]};
+if(got[i])delete got[i];else got[i]=1;save();
+if(onlyM)render();else{r.classList.toggle('got',!!got[i]);count();tabs()}};
+$('tabs').onclick=e=>{const t=e.target.closest('[data-t]');if(t){tab=t.dataset.t;render()}};
+$('bp').onclick=e=>{onlyP=!onlyP;e.target.classList.toggle('on',onlyP);render()};
+$('bf').onclick=e=>{onlyM=!onlyM;e.target.classList.toggle('on',onlyM);render()};
+$('q').oninput=e=>{q=e.target.value.toLowerCase();render()};
+$('rs').onclick=()=>{if(confirm('Zerar todas as conquistas marcadas?')){got={};save();render()}};
+$('sort').onclick=e=>{sort=sort=='wiki'?'miss':sort=='miss'?'az':'wiki';e.target.textContent=sort=='wiki'?'Ordenar':sort=='miss'?'Faltam 1º':'A-Z';render()};
+$('undo').onclick=()=>{if(!last)return;if(last.was)got[last.i]=1;else delete got[last.i];last=null;save();render()};
+function openOv(mode,msg,val){ovMode=mode;$('ovmsg').textContent=msg;$('ovta').value=val||'';$('ovta').readOnly=(mode=='exp');$('ov').classList.remove('hidden');if(mode=='exp'){$('ovta').select();try{document.execCommand('copy')}catch(e){}}}
+$('ovcancel').onclick=()=>$('ov').classList.add('hidden');
+$('ov').onclick=e=>{if(e.target.id=='ov')$('ov').classList.add('hidden')};
+$('exp').onclick=()=>{const ids=Object.keys(got).filter(k=>got[k]);openOv('exp','Copie este código e guarde (ou cole em outro dispositivo):',btoa(unescape(encodeURIComponent(JSON.stringify(ids)))))};
+$('imp').onclick=()=>openOv('imp','Cole aqui o código do seu progresso:','');
+$('ovok').onclick=()=>{if(ovMode=='imp'){try{const ids=JSON.parse(decodeURIComponent(escape(atob($('ovta').value.trim()))));if(!Array.isArray(ids))throw 0;got={};ids.forEach(i=>got[i]=1);save();render()}catch(err){alert('Código inválido!')}}else if(ovMode=='exp'){try{navigator.clipboard&&navigator.clipboard.writeText($('ovta').value)}catch(e){}}$('ov').classList.add('hidden')};
+render();
+</script></body></html>
